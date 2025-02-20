@@ -106,9 +106,7 @@ endif ()
 # Our assembly expects to be compiled by a C compiler, and is only enabled for
 # __GNUC__ compatible compilers. Otherwise all the ASM code is disabled by
 # macros.
-if(NOT CMAKE_ASM_COMPILER STREQUAL CMAKE_C_COMPILER)
-    set_source_files_properties(${Sources} PROPERTIES LANGUAGE C)
-endif()
+set_source_files_properties(${Sources} PROPERTIES LANGUAGE C)
 
 macro (add_definition target var)
     if (NOT ("${${var}}" STREQUAL ""))
